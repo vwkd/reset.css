@@ -1,0 +1,29 @@
+/* reset everything */
+
+* {
+    all: initial;
+}
+
+/* hide head again */
+
+head,
+meta,
+title,
+link,
+style,
+script {
+    display: none;
+}
+
+/* outline for accessibility */
+/* beware: not() has bad browser support as of 07/2020 */
+
+:not(html, body, embed, iframe, object):focus {
+    outline: auto 1px rgb(0, 119, 204);
+}
+
+/* use correct sizing box */
+
+* {
+    box-sizing: border-box;
+}
