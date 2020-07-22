@@ -1,4 +1,4 @@
-/* reset everything */
+/* template to completely reset document */
 
 * {
     all: initial;
@@ -15,14 +15,14 @@ script {
     display: none;
 }
 
-/* outline for accessibility */
-/* beware: not() has bad browser support as of 07/2020 */
+/* enable outline for accessibility */
+/* ToDo: not(argument list) has bad browser support as of 07/2020 */
 
 :not(html, body, embed, iframe, object):focus {
     outline: auto 1px rgb(0, 119, 204);
 }
 
-/* use correct sizing box */
+/* fix sizing box */
 
 * {
     box-sizing: border-box;
