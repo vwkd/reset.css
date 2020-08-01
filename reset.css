@@ -1,10 +1,10 @@
-/* template to completely reset document */
+/* complete reset of user agent style sheet */
 
 * {
     all: initial;
 }
 
-/* hide head again */
+/* hide head */
 
 head,
 meta,
@@ -15,11 +15,10 @@ script {
     display: none;
 }
 
-/* enable outline for accessibility */
-/* ToDo: not(argument list) has bad browser support as of 07/2020 */
+/* enable focus outline for accessibility */
 
-:not(html, body, embed, iframe, object):focus {
-    outline: auto 1px rgb(0, 119, 204);
+:focus {
+    outline: auto 5px rgb(0, 119, 204);
 }
 
 /* fix sizing box */
