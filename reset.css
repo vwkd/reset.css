@@ -1,7 +1,10 @@
-/* complete reset of user agent style sheet */
+/* --------- STYLE RESET --------- */
+
+/* resets any previous style, e.g. from user or user agent style sheet */
+/* beware: also includes any previous author style sheet! */
 
 * {
-    all: initial;
+    all: unset;
 }
 
 /* hide head */
@@ -16,13 +19,29 @@ script {
 }
 
 /* enable focus outline for accessibility */
+/* beware: selector :focus-visible is still behind flags as of Sept 2020 */
 
-:focus {
+:focus-visible {
     outline: auto 5px rgb(0, 119, 204);
 }
 
-/* fix sizing box */
+/* fix sizing box and default layout */
 
 * {
     box-sizing: border-box;
+    display: flex;
+}
+
+/* make root element size of viewport */
+
+html {
+    block-size: 100%;
+    /* already default in Flex Layout */
+    /* inline-size: 100%; */
+}
+
+/* disable cross axis stretch on first child of root element, such that following children don't stretch over full viewport */
+
+body {
+    align-self: start;
 }
