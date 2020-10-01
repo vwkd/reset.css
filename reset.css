@@ -1,10 +1,9 @@
 /* --------- STYLE RESET --------- */
 
 /* resets any previous style, e.g. from user or user agent style sheet */
-/* beware: also includes any previous author style sheet! */
 
 * {
-    all: unset;
+  all: unset;
 }
 
 /* hide head */
@@ -15,33 +14,35 @@ title,
 link,
 style,
 script {
-    display: none;
+  display: none;
 }
 
 /* enable focus outline for accessibility */
-/* beware: selector :focus-visible is still behind flags as of Sept 2020 */
+/* ToDo: use :focus-visible when supported https://caniuse.com/css-focus-visible */
 
-:focus-visible {
-    outline: auto 5px rgb(0, 119, 204);
+:focus {
+  outline-width: auto;
+  outline-style: var(--focus-outline-width, 1px);
+  outline-color: var(--focus-outline-color, rgb(0, 119, 204));
 }
 
 /* fix sizing box and default layout */
 
 * {
-    box-sizing: border-box;
-    display: flex;
+  box-sizing: border-box;
+  display: flex;
 }
 
 /* make root element size of viewport */
 
 html {
-    block-size: 100%;
-    /* already default in Flex Layout */
-    /* inline-size: 100%; */
+  block-size: 100%;
+  /* already default in Flex Layout */
+  /* inline-size: 100%; */
 }
 
 /* disable cross axis stretch on first child of root element, such that following children don't stretch over full viewport */
 
 body {
-    align-self: start;
+  align-self: start;
 }
