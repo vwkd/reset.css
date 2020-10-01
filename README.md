@@ -10,6 +10,8 @@ This style sheets completely resets all properties to the value that they would 
 
 The reset is achieved by using the CSS property `all` combined with the global value `unset` and the universal selector. Since the universal selector has no specificity, any declaration in an author style sheet will overwrite it without problems. Also this doesn't change the cascade, meaning if the user agent or user style sheet use an `!important` declaration it won't be reset.
 
+Note: This is not a normalise style sheet, since it doesn't preserve any user agent default styles, like [normalize.css](https://github.com/necolas/normalize.css) or [destyle.css](https://github.com/nicolas-cusan/destyle.css).
+
 
 
 ## Features
