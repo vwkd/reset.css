@@ -1,17 +1,18 @@
 /* --------- STYLE RESET --------- */
 
 /* resets any previous style, e.g. from user or user agent style sheet */
+/* beware: cross browser bug for SVG elements https://bugs.chromium.org/p/chromium/issues/detail?id=1134543 */
 
 *,
 *::before,
 *::after {
-  all: unset;
+    all: unset;
 }
 
-/* workaround for Chrome bug that doesn't reset color property of anchor element https://bugs.chromium.org/p/chromium/issues/detail?id=1134443 */
+/* beware: workaround for Chrome bug that doesn't reset color property of anchor element https://bugs.chromium.org/p/chromium/issues/detail?id=1134443 */
 
 a {
-  color: unset;
+    color: unset;
 }
 
 /* hide head */
@@ -22,16 +23,16 @@ title,
 link,
 style,
 script {
-  display: none;
+    display: none;
 }
 
 /* enable focus outline for accessibility */
 /* ToDo: use :focus-visible when supported https://caniuse.com/css-focus-visible */
 
 :focus {
-  outline-color: var(--focus-outline-color, rgb(0, 119, 204));
-  outline-width: var(--focus-outline-width, 1px);
-  outline-style: auto;
+    outline-color: var(--focus-outline-color, rgb(0, 119, 204));
+    outline-width: var(--focus-outline-width, 1px);
+    outline-style: auto;
 }
 
 /* fix sizing box and default layout */
@@ -39,20 +40,20 @@ script {
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  display: flex;
+    box-sizing: border-box;
+    display: flex;
 }
 
 /* make root element size of viewport */
 
 html {
-  block-size: 100%;
-  /* already default in Flex Layout */
-  /* inline-size: 100%; */
+    block-size: 100%;
+    /* already default in Flex Layout */
+    /* inline-size: 100%; */
 }
 
 /* disable cross axis stretch on first child of root element, such that following children don't stretch over full viewport */
 
 body {
-  align-self: start;
+    align-self: start;
 }
