@@ -29,9 +29,9 @@ script {
 /* ToDo: use :focus-visible when supported https://caniuse.com/css-focus-visible */
 
 :focus {
-  outline-width: auto;
-  outline-style: var(--focus-outline-width, 1px);
   outline-color: var(--focus-outline-color, rgb(0, 119, 204));
+  outline-width: var(--focus-outline-width, 1px);
+  outline-style: auto;
 }
 
 /* fix sizing box and default layout */
