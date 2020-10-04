@@ -37,3 +37,39 @@ For more details, see browser support for [`all` property](https://caniuse.com/c
 ## Roadmap
 
 - focus outline should only show on keyboard focus instead of mouse focus, but [`:focus-visible`](https://caniuse.com/css-focus-visible) selector is not yet supported as of October 2020
+
+
+
+## Known issues
+
+### SVG elements aren't visible or lost their styles
+
+Styling properties of SVG elements defined as presentational attributes are reset, because they behave as if they were defined at the top of the author style sheet with specificity 0, and therefore the `all` shorthand overrules them. That presentational attributes don't behave like inline styles may not be what one expected, but is intended behavior according to the [SVG spec](https://www.w3.org/TR/SVG2/styling.html#PresentationAttributes).
+
+> Presentation attributes contribute to the author level of the cascade, following all other author-level style sheets, and have specificity 0.
+
+The solution is to define styling properties in CSS instead of in HTML attributes, for example in inline styles. This is anyways the recommended way of defining styling properties according to the SVG spec.
+
+> In the future, any new properties that apply to SVG content will not gain presentation attributes. Therefore, authors are suggested to use styling properties, either through inline ‘style’ properties or style sheets, rather than presentation attributes, for styling SVG content.
+
+Note: Don't forget to add units in CSS, as a unitless CSS value doesn't default to the pixel unit as it does for presentational attributes!
+
+```html
+<!-- HTML ATTRIBUTES 👎 -->
+
+<svg width="100" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="45" stroke="red" fill="transparent" stroke-width="5" />
+</svg>
+```
+
+```html
+<!-- CSS PROPERTIES 👍 -->
+
+<svg width="100" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <circle style="cx: 50px; cy: 50px; r: 45px; stroke: red; fill: transparent; stroke-width: 5" />
+</svg>
+```
+
+### SVG <path> element isn't visible in Chrome
+
+This is a [known bug](https://bugs.chromium.org/p/chromium/issues/detail?id=1134976), but the workaround `:where(:not(path))` without increasing selector specificity is [not yet supported](https://caniuse.com/mdn-css_selectors_where) by Chrome as of Oct 2020.

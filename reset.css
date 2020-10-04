@@ -1,7 +1,12 @@
 /* --------- STYLE RESET --------- */
 
 /* resets any previous style, e.g. from user or user agent style sheet */
-/* beware: cross browser bug for SVG elements https://bugs.chromium.org/p/chromium/issues/detail?id=1134543 */
+/* beware: also resets styling properties of SVG elements defined as presentational attributes,
+   because they behave as if they were defined at the top of the author style sheet with specificity 0,
+   and therefore the `all` shorthand overrules them. Need to style instead in CSS, e.g. using inline styles. */
+
+/* beware: Chrome bug that doesn't show path element https://bugs.chromium.org/p/chromium/issues/detail?id=1134976,
+   workaround :where(:not(path)) without increasing selector specificity not yet supported by Chrome as of Oct 2020 https://caniuse.com/mdn-css_selectors_where */
 
 *,
 *::before,
