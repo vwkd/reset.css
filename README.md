@@ -59,6 +59,8 @@ Note: Don't forget to add units in CSS, as a unitless CSS value doesn't default 
 
 <svg width="100" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="45" stroke="red" fill="transparent" stroke-width="5" />
+  
+  <path d="M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 z"/>
 </svg>
 ```
 
@@ -67,9 +69,9 @@ Note: Don't forget to add units in CSS, as a unitless CSS value doesn't default 
 
 <svg width="100" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <circle style="cx: 50px; cy: 50px; r: 45px; stroke: red; fill: transparent; stroke-width: 5" />
+
+  <path style='d: path("M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 z")'/>
 </svg>
 ```
 
-### SVG <path> element isn't visible in Chrome
-
-This is a [known bug](https://bugs.chromium.org/p/chromium/issues/detail?id=1134976), but the workaround `:where(:not(path))` without increasing selector specificity is [not yet supported](https://caniuse.com/mdn-css_selectors_where) by Chrome as of Oct 2020.
+beware: as of Nov 2020, the `d: path("..")` syntax isn't yet in the spec and only supported by Chrome, see invalid [Chromium bug](https://bugs.chromium.org/p/chromium/issues/detail?id=1134976)
