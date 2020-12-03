@@ -1,13 +1,12 @@
 /* --------- STYLE RESET --------- */
 
 /* resets any previous style, e.g. from user or user agent style sheet */
+
 /* beware: also resets styling properties of SVG elements defined as presentational attributes,
    because they behave as if they were defined at the top of the author style sheet with specificity 0,
    and therefore the `all` shorthand overrules them. Need to style instead in CSS, e.g. using inline styles. */
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     all: unset;
 }
 
@@ -19,19 +18,13 @@ a {
 
 /* hide head */
 
-head,
-meta,
-title,
-link,
-style,
-script {
+head, meta, title, link, style, script {
     display: none;
 }
 
 /* enable focus outline for accessibility */
-/* ToDo: use :focus-visible when supported https://caniuse.com/css-focus-visible */
 
-:focus {
+:focus-visible {
     outline-color: var(--focus-outline-color, rgb(0, 119, 204));
     outline-width: var(--focus-outline-width, 1px);
     outline-style: auto;
@@ -40,9 +33,7 @@ script {
 
 /* fix sizing box and default layout */
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     box-sizing: border-box;
     display: flex;
 }

@@ -18,7 +18,7 @@ Note: This is not a normalise style sheet, since it doesn't preserve any user ag
 
 - Complete reset
 - Hide `<head>`, `<meta>`, `<title>`, `<link>`, `<style>`, `<script>` elements
-- Focus outline for accessibility on every focusable element, even for `<html>`, `<body>`, `<embed>`, `<iframe>`, `<object>`, also customisable via `--focus-outline-width` and `--focus-outline-color` custom properties
+- Focus outline for accessibility on every focusable element (including `<html>`, `<body>`, `<embed>`, `<iframe>`, `<object>`), customisable via `--focus-outline-width` and `--focus-outline-color` custom properties
 - Border box as sizing box, instead of content box
 - Flex Layout as default layout, instead of Flow Layout
 - `<html>` element default size is viewport size, instead of height being only content height
@@ -28,15 +28,9 @@ Note: This is not a normalise style sheet, since it doesn't preserve any user ag
 
 ## Browser support
 
-This reset should work in all modern browsers newer than IE11.
+This reset should work in all modern browsers. However the focus outline is supported only in some browsers newer than October 2020, not yet Safari.
 
-For more details, see browser support for [`all` property](https://caniuse.com/css-all), [CSS variables](https://caniuse.com/css-variables), and [Flexbox Layout](https://caniuse.com/flexbox).
-
-
-
-## Roadmap
-
-- focus outline should only show on keyboard focus instead of mouse focus, but [`:focus-visible`](https://caniuse.com/css-focus-visible) selector is not yet supported as of October 2020
+For more details, see browser support for [`all` property](https://caniuse.com/css-all), [CSS variables](https://caniuse.com/css-variables), [Flexbox Layout](https://caniuse.com/flexbox), and [`:focus-visible` selector](https://caniuse.com/css-focus-visible).
 
 
 
@@ -74,4 +68,4 @@ Note: Don't forget to add units in CSS, as a unitless CSS value doesn't default 
 </svg>
 ```
 
-beware: as of Nov 2020, the `d: path("..")` syntax isn't yet in the spec and only supported by Chrome, see invalid [Chromium bug](https://bugs.chromium.org/p/chromium/issues/detail?id=1134976)
+beware: as of Nov 2020, the `d: path("..")` syntax isn't yet in the spec and only supported by Chrome, see this invalid [Chromium bug](https://bugs.chromium.org/p/chromium/issues/detail?id=1134976)
