@@ -16,7 +16,7 @@ Note: This is not a normalise style sheet, since it doesn't preserve any user ag
 
 ## Demo
 
-See the [test page](test.html).
+See the test page [with reset](test.html) and [without reset](testbaseline.html). Credits to [html5-test-page](https://github.com/cbracco/html5-test-page).
 
 
 
