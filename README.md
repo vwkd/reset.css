@@ -10,19 +10,19 @@ This style sheets completely resets all properties to the value that they would 
 
 The reset is achieved by using the CSS property `all` combined with the global value `unset` and the universal selector. Since the universal selector has no specificity, any declaration in an author style sheet will overwrite it without problems. Also this doesn't change the cascade, meaning if the user agent or user style sheet use an `!important` declaration it won't be reset.
 
-Note: This is not a normalise style sheet, since it doesn't preserve any user agent default styles, like [normalize.css](https://github.com/necolas/normalize.css) or [destyle.css](https://github.com/nicolas-cusan/destyle.css).
+Note: This is not a normalise style sheet, since it doesn't preserve any user agent default styles, unlike [normalize.css](https://github.com/necolas/normalize.css) or [destyle.css](https://github.com/nicolas-cusan/destyle.css).
 
 
 
 ## Demo
 
-See the test page [with reset](test.html) and [without reset](testbaseline.html). Credits to [html5-test-page](https://github.com/cbracco/html5-test-page).
+See the test page [with reset](test.html) and [without reset](testbaseline.html). Thanks to [html5-test-page](https://github.com/cbracco/html5-test-page).
 
 
 
 ## Features
 
-- Complete reset
+- Reset everything
 - Hide `<head>`, `<meta>`, `<title>`, `<link>`, `<style>`, `<script>` elements
 - Focus outline for accessibility on every focusable element (including `<html>`, `<body>`, `<embed>`, `<iframe>`, `<object>`), customisable via `--focus-outline-width` and `--focus-outline-color` custom properties
 - Border box as sizing box, instead of content box
@@ -74,4 +74,4 @@ Note: Don't forget to add units in CSS, as a unitless CSS value doesn't default 
 </svg>
 ```
 
-beware: as of Nov 2020, the `d: path("..")` syntax isn't yet in the spec and only supported by Chrome, see this invalid [Chromium bug](https://bugs.chromium.org/p/chromium/issues/detail?id=1134976)
+beware: as of Nov 2020, the `d: path("..")` syntax isn't yet in the SVG spec and only supported by Chrome, see SVG spec [#374](https://github.com/w3c/svgwg/pull/374) and invalid Chromium bug [1134976](https://bugs.chromium.org/p/chromium/issues/detail?id=1134976).
