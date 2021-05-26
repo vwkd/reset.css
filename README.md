@@ -75,3 +75,15 @@ Note: Don't forget to add units in CSS, as a unitless CSS value doesn't default 
 ```
 
 beware: as of Nov 2020, the `d: path("..")` syntax isn't yet in the SVG spec and only supported by Chrome, see SVG spec [#374](https://github.com/w3c/svgwg/pull/374) and invalid Chromium bug [1134976](https://bugs.chromium.org/p/chromium/issues/detail?id=1134976).
+
+### Color property of anchor element isn't reset in older Chrome versions
+
+Older Chrome versions before 92 experienced a bug where they didn't apply the `all: unset` rule for the `color` property of an anchor element in some or all states. This was fixed in Chrome 92 released on July 20, 2021. Refer to the bugs [1195644](https://bugs.chromium.org/p/chromium/issues/detail?id=1195644) and previously [1195644](https://bugs.chromium.org/p/chromium/issues/detail?id=1134443).
+
+If you need to support older Chrome versions, you can reset the `color` property manually. Add the following rule to `reset.css`.
+
+```css
+a {
+    color: unset;
+}
+```

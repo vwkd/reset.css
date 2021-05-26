@@ -10,15 +10,6 @@
     all: unset;
 }
 
-/* 🐛 temporary workaround for Chrome which doesn't reset color property of anchor element properly
-   https://bugs.chromium.org/p/chromium/issues/detail?id=1134443
-   https://bugs.chromium.org/p/chromium/issues/detail?id=1195644
-*/
-
-a {
-    color: unset;
-}
-
 /* hide head */
 
 head, meta, title, link, style, script {
