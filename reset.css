@@ -1,9 +1,8 @@
-/* --------- STYLE RESET --------- */
-
 /* resets any previous style, e.g. from user or user agent style sheet
    beware: also resets styling properties of SVG elements defined as presentational attributes,
-   because they behave as if they were defined at the top of the author style sheet with specificity 0,
-   and therefore the `all` shorthand overrules them. Need to style instead in CSS, e.g. using inline styles.
+   because they behave as if they were defined at the top of the author style sheet
+   with specificity 0, and therefore the `all` shorthand overrules them.
+   Need to style SVG elements instead in CSS, e.g. using inline styles.
 */
 
 *, *::before, *::after {
@@ -40,7 +39,9 @@ html {
     /* inline-size: 100%; */
 }
 
-/* disable cross axis stretch on first child of root element, such that following children don't stretch over full viewport */
+/* disable cross axis stretch on first child of root element,
+   such that following children don't stretch over full viewport
+*/
 
 body {
     align-self: start;
