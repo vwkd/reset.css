@@ -24,7 +24,7 @@ After resetting everything, this style sheet also includes modern default styles
 - Border box as sizing box, instead of content box
 - Flex Layout as default layout, instead of Flow Layout
 - `<html>` element default size is viewport size, instead of height being only content height
-- `<body>` element aligned to cross axis start to make children not stretch over full viewport
+- `<body>` element default size is viewport size
 
 
 

@@ -31,18 +31,22 @@ head, meta, title, link, style, script {
     display: flex;
 }
 
-/* make root element size of viewport */
+/* make root element size of viewport
+
+note: inline-size: 100% is already default in Flex Layout !
+*/
 
 html {
     block-size: 100%;
-    /* already default in Flex Layout */
-    /* inline-size: 100%; */
 }
 
-/* disable cross axis stretch on first child of root element,
-   such that following children don't stretch over full viewport
+/* make entry point element full size
+
+note: cross axis stretch by default in Flex Layout, where cross axis is block direction by default in Flex Layout
+
+disable cross axis stretch on any child element, e.g. align-self: start;
 */
 
 body {
-    align-self: start;
+    flex: 1;
 }
