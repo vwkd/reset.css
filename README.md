@@ -1,16 +1,30 @@
 # reset.css
 
-A modern and complete CSS reset
+A complete CSS reset and a modern default style
 
 
 
 ## Introduction
 
-This style sheets completely resets all properties to the value that they would have had if no user agent or user style sheets were present. This means, that all elements look the same since they are completely unstyled. This is a great starting point for building Web applications, but will require to manually style any element that is used, including commonly used elements like `<video>`, `<input>`, `<button>`, etc.
+Tired of battling browser styles? Tired of mixing your styles with browser unset styles? Tired of writing `margin: 0;` all the time? Enter `reset.css`. This style sheets completely resets all properties to the value that they had if no user agent or user style sheet were present. In an ideal world browsers would not have styled by default (and each one slightly differently!). Now, thanks to the recent CSS property `all` living in an ideal world becomes possible.
 
-The reset is achieved by using the CSS property `all` combined with the global value `unset` and the universal selector. Since the universal selector has no specificity, any declaration in an author style sheet will overwrite it without problems. Also this doesn't change the cascade, meaning if the user agent or user style sheet use an `!important` declaration it won't be reset.
+Note, all elements will look the same by default since now they are completely unstyled. You will have to style any element that you use, including commonly used elements like `<video>`, `<input>`, `<button>`, etc. whose looks up until now you might have taken for granted. It might take you longer to get started but it will pay off in the long run!
 
-Note: This is not a normalise style sheet, since it doesn't preserve any user agent default styles, unlike [normalize.css](https://github.com/necolas/normalize.css) or [destyle.css](https://github.com/nicolas-cusan/destyle.css).
+Note, this is not a normalise style sheet, since it doesn't preserve any user agent default styles, unlike [normalize.css](https://github.com/necolas/normalize.css) or [destyle.css](https://github.com/nicolas-cusan/destyle.css).
+
+After resetting everything, this style sheet also includes modern default styles that are a great starting point for building Web applications.
+
+
+
+## Features
+
+- Reset everything
+- Hide `<head>`, `<meta>`, `<title>`, `<link>`, `<style>`, `<script>` elements again
+- Focus outline for accessibility on every focusable element (including `<html>`, `<body>`, `<embed>`, `<iframe>`, `<object>`), customisable via `--focus-outline-width` and `--focus-outline-color` custom properties
+- Border box as sizing box, instead of content box
+- Flex Layout as default layout, instead of Flow Layout
+- `<html>` element default size is viewport size, instead of height being only content height
+- `<body>` element aligned to cross axis start to make children not stretch over full viewport
 
 
 
@@ -20,23 +34,25 @@ See the test page [with reset](test.html) and [without reset](testbaseline.html)
 
 
 
-## Features
+## Getting started
 
-- Reset everything
-- Hide `<head>`, `<meta>`, `<title>`, `<link>`, `<style>`, `<script>` elements
-- Focus outline for accessibility on every focusable element (including `<html>`, `<body>`, `<embed>`, `<iframe>`, `<object>`), customisable via `--focus-outline-width` and `--focus-outline-color` custom properties
-- Border box as sizing box, instead of content box
-- Flex Layout as default layout, instead of Flow Layout
-- `<html>` element default size is viewport size, instead of height being only content height
-- `<body>` element aligned to cross axis start to make children not stretch over full viewport
+Simply include `reset.css` in the head of your document *before* any of your own styles.
+
+
+
+## Details
+
+The reset uses the CSS property `all` combined with the global value `unset` and the universal selector. Since the universal selector has no specificity, any declaration in any author style sheet will overwrite it. Also it doesn't change the cascade, meaning if the user agent or user style sheet use an `!important` declaration it won't be reset. This means the reset itself can be anywhere in the document. It's recommended to include `reset.css` first because of the modern defaults.
+
+Note, `reset.css` assumes you style from the `<body>` element downwards. For example, if you use a framework that inserts wrapper elements between your entry point and the `<body>`, you'll need to style those as well, e.g. `flex-1`.
 
 
 
 ## Browser support
 
-This reset should work in all modern browsers. However the focus outline is supported only in some browsers newer than October 2020, not yet Safari.
+This reset should work in all modern browsers. Note, the focus outline is supported in all browsers only since March 2022 when Safari finally gained support.
 
-For more details, see browser support for [`all` property](https://caniuse.com/css-all), [CSS variables](https://caniuse.com/css-variables), [Flexbox Layout](https://caniuse.com/flexbox), and [`:focus-visible` selector](https://caniuse.com/css-focus-visible).
+See CanIUse entries for [`all` property](https://caniuse.com/css-all), [CSS variables](https://caniuse.com/css-variables), [Flexbox Layout](https://caniuse.com/flexbox), and [`:focus-visible` selector](https://caniuse.com/css-focus-visible).
 
 
 
