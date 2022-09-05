@@ -25,6 +25,7 @@ After resetting everything, this style sheet also includes modern default styles
 - Flex Layout as default layout, instead of Flow Layout
 - `<html>` element default size is viewport size, instead of height being only content height
 - `<body>` element default size is viewport size
+- Border style as solid instead of none, border width as none instead of medium, such that can add solid border just by setting its width
 
 
 
